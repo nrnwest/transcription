@@ -1,0 +1,42 @@
+*.exe
+*.test
+*.out
+/transcription-run
+
+# Release build artifacts
+dist/
+
+tmp/
+*.tmp
+*.swp
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Локальний конфіг — публічний лише .env.example
+.env
+
+# Великі ggml-моделі whisper не мають потрапляти в git,
+# але моделі діаризації (малі, вільні ліцензії) розповсюджуємо в репозиторії
+models/*
+!models/diarization/
+!models/diarization-pyannote/
+
+# Локальні тестові відео та їх результати
+file_temp/
+
+# app
+.claude
+.specify
+documents
+specs
+CLAUDE.md
+README-DEV.md
+# Leading slash: match the built binary in the repo root only —
+# a bare "transcription" would also match the cmd/transcription/ package directory.
+/transcription
+/fm
